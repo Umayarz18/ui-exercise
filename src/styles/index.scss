@@ -1,0 +1,15 @@
+@use 'foundations/typography';
+@use 'foundations/spacing';
+@use 'foundations/colors';
+
+.bg{
+    background-color: c;
+}
+
+@function color($color) {
+    $result: 1;
+    @for $_ from 1 through $exponent {
+      $result: $result * $base;
+    }
+    @return $result;
+  }
