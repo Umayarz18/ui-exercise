@@ -103,7 +103,6 @@ export const DataVisCard = ({ moviesData, location, updatedAt }) => {
 					data={graphData}
 					options={{
 						responsive: true,
-						aspectRatio: 49489 / 19312,
 						maintainAspectRatio: true,
 						plugins: {
 							legend: {
