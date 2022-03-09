@@ -72,6 +72,24 @@ export const DataVisCard = ({ moviesData, location, updatedAt }) => {
 		return totalSalesAmount.toLocaleString("en-US");
 	}
 
+	const chartTitle = () => {
+		let totalTitle = "Comparision - ";
+		for (let i = 0; i < moviesData.length; i++) {
+			if (i === 3) {
+				totalTitle += " etc..."
+				break;
+			}
+			else if (i + 1 === moviesData.length) {
+				totalTitle += `and ${moviesData[i].title}`;
+				break;
+			}
+			else {
+				totalTitle += moviesData[i].title + ", ";
+			}
+		}
+		return totalTitle;
+	}
+
 	/**
 	 * A would be function that takes a look at movie data then generates an
 	 * AI message about the results
@@ -90,7 +108,7 @@ export const DataVisCard = ({ moviesData, location, updatedAt }) => {
 					Total Movie Sales
 				</h2>
 				<p className="chart-title">
-					Comparison - Movie 1 and Movie 2
+					{chartTitle()}
 				</p>
 				<p className="average-sales-location">
 					Average value of sales in the past month in:{" "}
