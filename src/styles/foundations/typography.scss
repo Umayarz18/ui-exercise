@@ -1,0 +1,36 @@
+$text: (
+	36: 36px,
+	30: 30px,
+	24: 24px,
+	20: 20px,
+	16: 16px,
+	14: 14px,
+	12: 12px,
+	10: 10px,
+	8: 8px,
+);
+
+$font: (
+	reg: 400,
+	semi: 600,
+);
+
+@function text-size($size) {
+	@return map-get($text, $size);
+}
+
+@function font-weight($weight) {
+	@return map-get($font, $weight);
+}
+
+@each $size, $value in $text {
+	.text-#{$size} {
+		font-size: $value;
+	}
+}
+
+@each $weight, $value in $font {
+	.font-#{$weight} {
+		font-weight: $value;
+	}
+}

@@ -1,0 +1,55 @@
+@use "../../styles/foundations/colors.scss" as *;
+
+.btn {
+	border: color(mocha, 50) 1px solid;
+	background-color: color(mocha, 50);
+	color: map-get($colors, white);
+	border-radius: 4px;
+	font-size: 14px;
+	width: max-content;
+	padding: 8px 16px;
+
+	&.primary {
+		border: color(ub, 40) 1px solid;
+		background-color: color(ub, 40);
+		&:focus {
+			border: color(ub, 60) 1px solid;
+			box-shadow: 1px 1px 1px color(ub, 60);
+			outline: none;
+		}
+		&:hover {
+			background-color: color(ub, 30);
+			border: color(ub, 30) 1px solid;
+		}
+
+		&:active {
+			background-color: color(ub, 50);
+			border: color(ub, 50) 1px solid;
+			color: color(ub, 30);
+		}
+	}
+
+	&:focus {
+		border: color(mocha, 60) 1px solid;
+		box-shadow: 1px 1px 1px color(mocha, 60);
+		outline: none;
+	}
+
+	&:hover {
+		background-color: color(mocha, 30);
+		border: color(mocha, 30) 1px solid;
+	}
+
+	&:active {
+		background-color: color(mocha, 50);
+		border: color(mocha, 50) 1px solid;
+		color: color(mocha, 30);
+	}
+
+	&:disabled {
+		background-color: transparentize(color(mocha, 40), 0.85);
+		border: color(mocha, 40) 1px solid;
+		color: color(mocha, 40);
+		cursor: not-allowed;
+	}
+}

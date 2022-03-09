@@ -1,0 +1,46 @@
+@use "../../styles/foundations/colors.scss" as *;
+progress.status-acknowledge {
+	&::-webkit-progress-value {
+		background-color: map-get($colors, acknowledge) !important;
+	}
+}
+
+progress.status-mocha-50 {
+	&::-webkit-progress-value {
+		background-color: color(mocha, 50) !important;
+	}
+}
+
+progress.status-hi-alert {
+	&::-webkit-progress-value {
+		background-color: map-get($colors, hi-alert) !important;
+	}
+}
+
+progress.status-alert {
+	&::-webkit-progress-value {
+		background-color: map-get($colors, alert) !important;
+	}
+}
+
+progress.status-gold {
+	&::-webkit-progress-value {
+		background-color: map-get($colors, gold) !important;
+	}
+}
+progress {
+	-webkit-appearance: none;
+	height: 6px;
+	appearance: none;
+	border-radius: 2px;
+	background-color: color(mocha, 50);
+	width: 100%;
+	&::-webkit-progress-value {
+		border-radius: 2px 0 0 2px;
+		//background-color: map-get($colors, acknowledge) !important;
+	}
+	&::-webkit-progress-bar {
+		background-color: color(mocha, 10);
+		border-radius: 2px;
+	}
+}

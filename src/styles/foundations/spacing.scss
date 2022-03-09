@@ -1,0 +1,48 @@
+/**All spaces**/
+$spaces: (0, 4, 8, 12, 16, 24, 32, 40, 48, 64, 96);
+
+@each $space-value in $spaces {
+	.m-#{$space-value} {
+		margin: #{$space-value}px;
+	}
+	.mx-#{$space-value} {
+		margin: 0px #{$space-value}px;
+	}
+	.my-#{$space-value} {
+		margin: #{$space-value}px 0px;
+	}
+	.mt-#{$space-value} {
+		margin-top: #{$space-value}px;
+	}
+	.mr-#{$space-value} {
+		margin-right: #{$space-value}px;
+	}
+	.mb-#{$space-value} {
+		margin-bottom: #{$space-value}px;
+	}
+	.ml-#{$space-value} {
+		margin-left: #{$space-value}px;
+	}
+
+	.p-#{$space-value} {
+		padding: #{$space-value}px;
+	}
+	.px-#{$space-value} {
+		padding: 0px #{$space-value}px;
+	}
+	.py-#{$space-value} {
+		padding: #{$space-value}px 0px;
+	}
+	.pt-#{$space-value} {
+		padding-top: #{$space-value}px;
+	}
+	.pr-#{$space-value} {
+		padding-right: #{$space-value}px;
+	}
+	.pb-#{$space-value} {
+		padding-bottom: #{$space-value}px;
+	}
+	.pl-#{$space-value} {
+		padding-left: #{$space-value}px;
+	}
+}

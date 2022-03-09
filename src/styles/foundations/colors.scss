@@ -1,0 +1,64 @@
+$colors: (
+	white: #ffffff,
+	mocha: (
+		5: #f7f6f6,
+		10: #eeecec,
+		20: #dfdede,
+		30: #bfbebc,
+		40: #9f9d9b,
+		50: #7f7d79,
+		60: #5f5c58,
+		70: #474542,
+		80: #302e2c,
+	),
+	ub: (
+		5: #e8f2f4,
+		10: #cee3e8,
+		20: #9dc7d2,
+		30: #6baabb,
+		40: #3a8ea5,
+		50: #09728e,
+		60: #07566b,
+		70: #04485b,
+		80: #053947,
+	),
+	acknowledge: #4fa806,
+	hi-alert: #e42508,
+	alert: #e4a206,
+	gold: #f7e0aa,
+);
+
+@function color($color, $tone: "5") {
+	@return map-get(map-get($colors, $color), $tone);
+}
+
+/**Any Colors without multiple shades are caught in the if statement */
+@each $color, $shades in $colors {
+	@if $color ==
+		white or
+		$color ==
+		acknowledge or
+		$color ==
+		hi-alert or
+		$color ==
+		alert or
+		$color ==
+		gold
+	{
+		.text-#{$color} {
+			color: $shades;
+		}
+		.bg-#{$color} {
+			background-color: $shades;
+		}
+	} @else {
+		@each $shade, $value in $shades {
+			.text-#{$color}-#{$shade} {
+				color: $value;
+			}
+			.bg-#{$color}-#{$shade} {
+				background-color: $value;
+			}
+		}
+	}
+}

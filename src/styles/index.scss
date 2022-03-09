@@ -1,0 +1,50 @@
+//Breakpoints, Layouts
+@use "foundations/breakpoints" as *;
+@forward "foundations/containers";
+
+//Design Tokens
+@use "foundations/typography";
+@use "foundations/spacing";
+@use "foundations/colors" as *;
+
+//Components
+@use "../components/Button/button.scss";
+@use "../components/ProgressBar/progressBar.scss";
+@use "../components/Card/card.scss";
+@use "../components//DataVisCard/dataVisCard.scss";
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+:root {
+	font-family: "Open Sans", sans-serif;
+}
+
+body {
+	margin: 0;
+	position: relative;
+	overflow-x: hidden;
+	background-color: color(mocha, 10);
+}
+
+main {
+	display: grid;
+	place-content: center;
+	width: 100vw;
+	height: 100vh;
+	margin: auto;
+
+	@media (max-width: getBreakpoint(sm, max)) {
+		justify-content: center;
+		align-content: start;
+	}
+
+	@media (max-width: getBreakpoint(md, max)) and (orientation: portrait) {
+		justify-content: space-evenly;
+		align-content: baseline;
+		overflow-x: hidden;
+	}
+	@media (max-width: getBreakpoint(md, max)) and (orientation: landscape) {
+		justify-content: space-evenly;
+		align-content: center;
+		overflow-x: hidden;
+	}
+}

@@ -1,0 +1,57 @@
+.grid {
+	display: grid;
+	place-content: center;
+	height: inherit;
+	width: inherit;
+}
+
+.app-wrapper {
+	grid-gap: 8px;
+	display: grid;
+	place-items: center;
+	grid-template-columns: repeat(2, 1fr);
+	width: auto;
+	height: auto;
+	.data-card {
+		grid-column: 1 / span 2;
+		.card-header {
+			display: grid;
+			grid-template-columns: 1.5fr 1.5fr;
+			grid-template-rows: 1.5fr 1.5fr;
+			gap: 0px 0px;
+			grid-auto-flow: row;
+			grid-template-areas:
+				"section-title average-sales-location"
+				"chart-title all-sales";
+
+			.section-title {
+				grid-area: section-title;
+			}
+			.chart-title {
+				grid-area: chart-title;
+			}
+			.average-sales-location {
+				grid-area: average-sales-location;
+				text-align: end;
+			}
+			.all-sales {
+				grid-area: all-sales;
+				text-align: end;
+			}
+		}
+	}
+	.movie-card {
+		/**For Large Devices */
+		min-width: 352px;
+		@media (max-width: 599px) {
+			grid-column: 2 / span 1;
+			min-width: 298px;
+			min-height: 180px;
+			margin: auto;
+		}
+	}
+	@media (max-width: 599px) {
+		grid-template-columns: 1fr;
+		grid-gap: 8px 0px;
+	}
+}
