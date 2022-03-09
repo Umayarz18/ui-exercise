@@ -1,73 +1,48 @@
-/**Margins**/
-.m{
-    &-4{
-        margin: 4px;
-    }
-    &-8{
-        margin: 8px;
-    }
-    &-12{
-        margin: 12px;
-    }
-    &-16{
-        margin: 16px;
-    }
-    &-20{
-        margin: 20px;
-    }
-    &-24{
-        margin: 24px;
-    }
-    &-32{
-        margin: 32px;
-    }
-    &-40{
-        margin: 40px;
-    }
-    &-48{
-        margin: 48px;
-    }
-    &-64{
-        margin: 64px;
-    }
-    &-96{
-        margin: 96px;
-    }
-}
+/**All spaces**/
+$spaces: (0, 4, 8, 12, 16, 24, 32, 40, 48, 64, 96);
 
-/**Padding**/
-.p{
-    &-4{
-        padding: 4px;
-    }
-    &-8{
-        padding: 8px;
-    }
-    &-12{
-        padding: 12px;
-    }
-    &-16{
-        padding: 16px;
-    }
-    &-20{
-        padding: 20px;
-    }
-    &-24{
-        padding: 24px;
-    }
-    &-32{
-        padding: 32px;
-    }
-    &-40{
-        padding: 40px;
-    }
-    &-48{
-        padding: 48px;
-    }
-    &-64{
-        padding: 64px;
-    }
-    &-96{
-        margin: 96px;
-    }
+@each $space-value in $spaces {
+	.m-#{$space-value} {
+		margin: #{$space-value}px;
+	}
+	.mx-#{$space-value} {
+		margin: 0px #{$space-value}px;
+	}
+	.my-#{$space-value} {
+		margin: #{$space-value}px 0px;
+	}
+	.mt-#{$space-value} {
+		margin-top: #{$space-value}px;
+	}
+	.mr-#{$space-value} {
+		margin-right: #{$space-value}px;
+	}
+	.mb-#{$space-value} {
+		margin-bottom: #{$space-value}px;
+	}
+	.ml-#{$space-value} {
+		margin-left: #{$space-value}px;
+	}
+
+	.p-#{$space-value} {
+		padding: #{$space-value}px;
+	}
+	.px-#{$space-value} {
+		padding: 0px #{$space-value}px;
+	}
+	.py-#{$space-value} {
+		padding: #{$space-value}px 0px;
+	}
+	.pt-#{$space-value} {
+		padding-top: #{$space-value}px;
+	}
+	.pr-#{$space-value} {
+		padding-right: #{$space-value}px;
+	}
+	.pb-#{$space-value} {
+		padding-bottom: #{$space-value}px;
+	}
+	.pl-#{$space-value} {
+		padding-left: #{$space-value}px;
+	}
 }

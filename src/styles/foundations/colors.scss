@@ -1,25 +1,64 @@
-$white: #FFFFFF;
-$mocha5: #F7F6F6;
-$mocha10: #EEECEC;
-$mocha20: #DFDEDE;
-$mocha30: #BFBEBC;
-$mocha40: #9F9D9B;
-$mocha50: #7F7D79;
-$mocha60: #5F5C58;
-$mocha70: #474542;
-$mocha80: #302E2C;
+$colors: (
+	white: #ffffff,
+	mocha: (
+		5: #f7f6f6,
+		10: #eeecec,
+		20: #dfdede,
+		30: #bfbebc,
+		40: #9f9d9b,
+		50: #7f7d79,
+		60: #5f5c58,
+		70: #474542,
+		80: #302e2c,
+	),
+	ub: (
+		5: #e8f2f4,
+		10: #cee3e8,
+		20: #9dc7d2,
+		30: #6baabb,
+		40: #3a8ea5,
+		50: #09728e,
+		60: #07566b,
+		70: #04485b,
+		80: #053947,
+	),
+	acknowledge: #4fa806,
+	hi-alert: #e42508,
+	alert: #e4a206,
+	gold: #f7e0aa,
+);
 
-$ub5: #E8F2F4;
-$ub10:#CEE3E8;
-$ub20:#9DC7D2;
-$ub30:#6BAABB;
-$ub40:#3A8EA5;
-$ub50:#09728E;
-$ub60:#07566B;
-$ub70:#04485B;
-$ub80:#053947;
+@function color($color, $tone: "5") {
+	@return map-get(map-get($colors, $color), $tone);
+}
 
-$acknowledge: #4FA806;
-$hi-alert: #E42508;
-$alert:#E4A206;
-$gold: #f7e0aa;
+/**Any Colors without multiple shades are caught in the if statement */
+@each $color, $shades in $colors {
+	@if $color ==
+		white or
+		$color ==
+		acknowledge or
+		$color ==
+		hi-alert or
+		$color ==
+		alert or
+		$color ==
+		gold
+	{
+		.text-#{$color} {
+			color: $shades;
+		}
+		.bg-#{$color} {
+			background-color: $shades;
+		}
+	} @else {
+		@each $shade, $value in $shades {
+			.text-#{$color}-#{$shade} {
+				color: $value;
+			}
+			.bg-#{$color}-#{$shade} {
+				background-color: $value;
+			}
+		}
+	}
+}

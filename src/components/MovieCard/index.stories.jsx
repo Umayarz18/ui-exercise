@@ -1,14 +1,14 @@
 import React from "react";
 
-import { Card } from "./index";
+import { MovieCard } from "./index";
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-	title: "Components/Card",
-	component: Card,
+	title: "Components/MovieCard",
+	component: MovieCard,
 	// More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 };
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template = (args) => <Card {...args} />;
+const Template = (args) => <MovieCard {...args} />;
 
 export const Default = Template.bind({});
