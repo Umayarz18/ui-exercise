@@ -1,23 +1,25 @@
+import "../public/stylesheets.css";
+
 const customViewports = {
   small: {
-    name: 'Small Device',
+    name: "Small Device",
     styles: {
-      width: '320px',
-      height: '599px',
+      width: "320px",
+      height: "599px",
     },
   },
   medium: {
-    name: 'Medium Device',
+    name: "Medium Device",
     styles: {
-      width: '600px',
-      height: '1279px',
+      width: "600px",
+      height: "1279px",
     },
   },
   large: {
-    name: 'Large Device',
+    name: "Large Device",
     styles: {
-      width: '1280px',
-      height: '1920px',
+      width: "1280px",
+      height: "1920px",
     },
   }
 }
