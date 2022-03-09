@@ -1,9 +1,4 @@
-.grid {
-	display: grid;
-	place-content: center;
-	height: inherit;
-	width: inherit;
-}
+@use "breakpoints" as *;
 
 .app-wrapper {
 	grid-gap: 8px;
@@ -43,15 +38,28 @@
 	.movie-card {
 		/**For Large Devices */
 		min-width: 352px;
-		@media (max-width: 599px) {
+		@media (max-width: getBreakpoint(sm, max)) {
 			grid-column: 2 / span 1;
 			min-width: 298px;
 			min-height: 180px;
 			margin: auto;
 		}
 	}
-	@media (max-width: 599px) {
+
+	@media (max-width: getBreakpoint(sm, max)) and (orientation: portrait) {
 		grid-template-columns: 1fr;
 		grid-gap: 8px 0px;
+	}
+
+	@media (max-width: getBreakpoint(md, max)) and (orientation: landscape) {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	@media (min-width: getBreakpoint(md, min)) and (orientation: portrait) {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
 	}
 }
