@@ -3,10 +3,16 @@ progress.status-acknowledge {
 	&::-webkit-progress-value {
 		background-color: map-get($colors, acknowledge) !important;
 	}
+	&::-moz-progress-bar {
+		background-color: map-get($colors, acknowledge) !important;
+	}
 }
 
 progress.status-mocha-50 {
 	&::-webkit-progress-value {
+		background-color: color(mocha, 50) !important;
+	}
+	&::-moz-progress-bar {
 		background-color: color(mocha, 50) !important;
 	}
 }
@@ -15,10 +21,16 @@ progress.status-hi-alert {
 	&::-webkit-progress-value {
 		background-color: map-get($colors, hi-alert) !important;
 	}
+	&::-moz-progress-bar {
+		background-color: map-get($colors, hi-alert) !important;
+	}
 }
 
 progress.status-alert {
 	&::-webkit-progress-value {
+		background-color: map-get($colors, alert) !important;
+	}
+	&::-moz-progress-bar {
 		background-color: map-get($colors, alert) !important;
 	}
 }
@@ -27,20 +39,28 @@ progress.status-gold {
 	&::-webkit-progress-value {
 		background-color: map-get($colors, gold) !important;
 	}
+	&::-moz-progress-bar {
+		background-color: map-get($colors, gold) !important;
+	}
 }
 progress {
 	-webkit-appearance: none;
 	height: 6px;
 	appearance: none;
+	border: none;
 	border-radius: 2px;
-	background-color: color(mocha, 50);
+	background-color: color(mocha, 10);
 	width: 100%;
+	&::-moz-progress-bar {
+		background-color: color(mocha, 10) !important;
+		border-radius: 2px 0 0 2px;
+		border: none;
+	}
 	&::-webkit-progress-value {
 		border-radius: 2px 0 0 2px;
-		//background-color: map-get($colors, acknowledge) !important;
 	}
 	&::-webkit-progress-bar {
-		background-color: color(mocha, 10);
+		background-color: color(mocha, 10) !important;
 		border-radius: 2px;
 	}
 }
