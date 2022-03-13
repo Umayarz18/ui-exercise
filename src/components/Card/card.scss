@@ -25,6 +25,7 @@
 	&--xl {
 		height: max-content;
 		width: -webkit-fill-available;
+		width: -moz-available;
 		max-width: 808px;
 	}
 	&__list {
@@ -42,6 +43,7 @@
 		padding-inline-start: 0px;
 		&--bullet {
 			list-style-type: disc;
+
 			margin-block-start: 1em;
 			margin-block-end: 1em;
 			padding-inline-start: 40px;
@@ -52,15 +54,12 @@
 			justify-content: space-between;
 			align-items: center;
 			width: 100%;
-			> * {
-				margin-bottom: 16px;
-			}
+			margin-bottom: 16px;
 		}
-		li:nth-child(2) {
+		li:not(:first-child) {
 			border-top: color(mocha, 20) 1px solid;
 			> * {
 				margin-top: 16px;
-				margin-bottom: 0px;
 			}
 		}
 	}

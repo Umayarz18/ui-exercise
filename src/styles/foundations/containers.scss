@@ -3,7 +3,7 @@
 .app-wrapper {
 	grid-gap: 8px;
 	display: grid;
-	place-items: center;
+	place-content: center;
 	grid-template-columns: repeat(2, 1fr);
 	width: auto;
 	height: auto;
@@ -33,22 +33,36 @@
 				grid-area: all-sales;
 				text-align: end;
 			}
+			@media (max-width: getBreakpoint(sm, max)) {
+				grid-template-rows: 0.8fr 1.6fr !important;
+			}
+		}
+		@media (min-width: getBreakpoint(lg, min)) {
+			min-width: inherit;
 		}
 	}
 	.movie-card {
 		/**For Large Devices */
 		min-width: 352px;
+		max-width: 376px;
 		@media (max-width: getBreakpoint(sm, max)) {
 			grid-column: 2 / span 1;
-			min-width: 298px;
 			min-height: 180px;
-			margin: auto;
+			max-width: 100% !important;
+		}
+		@media (max-width: getBreakpoint(md, max)) and (orientation: landscape) {
+			max-width: 100%;
+			min-width: 90%;
+		}
+		@media (max-width: getBreakpoint(md, max)) and (orientation: portrait) {
+			max-width: 100%;
 		}
 	}
 
 	@media (max-width: getBreakpoint(sm, max)) and (orientation: portrait) {
 		grid-template-columns: 1fr;
 		grid-gap: 8px 0px;
+		margin: 4px !important;
 	}
 
 	@media (max-width: getBreakpoint(md, max)) and (orientation: landscape) {
@@ -57,9 +71,17 @@
 		align-items: stretch;
 	}
 
+	@media (max-width: getBreakpoint(md, max)) and (orientation: portrait) {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		margin: 4px;
+	}
+
 	@media (min-width: getBreakpoint(md, min)) and (orientation: portrait) {
 		display: flex;
 		flex-direction: column;
 		align-items: stretch;
+		max-width: max-content;
 	}
 }

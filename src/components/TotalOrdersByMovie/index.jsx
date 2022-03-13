@@ -8,7 +8,7 @@ export const TotalOrdersByMovie = ({
 	progressColor,
 }) => {
 	return (
-		<div className="px-16 text-12 font-reg text-mocha-60">
+		<div className="pl-16 text-12 font-reg text-mocha-60">
 			<strong className="font-reg text-mocha-80 text-24">
 				{totalOrders.toLocaleString("en-US")}
 			</strong>
